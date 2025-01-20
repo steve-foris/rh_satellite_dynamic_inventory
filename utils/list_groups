@@ -1,0 +1,8 @@
+#!/bin/bash
+#sat_inventory.py | grep '\[' | cut -d: -f1
+ansible_version_maj=$(ansible --version | head -n1 | cut -d ' ' -f 2|cut -d. -f 1,2)
+
+#echo "DEBUG ansible_version_maj: $ansible_version_maj"
+
+2>/dev/null ansible localhost  -m debug -a 'var=groups.keys()'  | grep '        "' | sed 's/"//g' | sed 's/,//g' | sed 's/^        //g' | sort
+

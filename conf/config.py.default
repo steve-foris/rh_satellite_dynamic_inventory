@@ -1,0 +1,14 @@
+#!/bin/env python
+import os,sys
+
+SAT_API = 'https://satellite.fqdn/api/v2/'
+SAT_SVR = 'https://satellite.fqdn/'
+USERNAME = "ansible_inventory"
+PASSWORD = "" # Get from keepass
+SSL_VERIFY = False   # Ignore SSL for now
+home_dir=os.path.expanduser('~')
+CACHE_FILE = home_dir+"/inventory_cache.json"
+#CACHE_REFRESH = 3600 #one hour
+CACHE_REFRESH = 14400 #four hours
+MAX_PER_PAGE = '1000'
+NUM_THREADS = 45  # Number of concurrent threads to satellite API best in testing

@@ -1,0 +1,6 @@
+- ans_fmt: Formats an input file into a structure compatible with Ansible. Useful for filters for example:
+  ansible "$(ans_fmt hostlist:&NON_PROD)" --list.
+
+- list_groups: Lists groups (host collections) configured in the Satellite server that are available in Ansible.
+- list_groups_for_hosts: Displays the group memberships for a specific host.
+- new_local_ansible_host.sh: Adds a host to a local inventory file for Ansible.

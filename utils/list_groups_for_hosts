@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+
+#This utility will list all the host_groups associated with a host
+#USAGE:
+# ./list_groups_for_hosts -l hostname.fqdn
+
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: show the groups the host(s) are in
+    debug:
+      msg: "{{group_names}}"
